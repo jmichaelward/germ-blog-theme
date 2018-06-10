@@ -17,7 +17,7 @@ class Notifier {
 	 */
 	public function notify_missing_autoloader() {
 		add_action( 'admin_notices', function () {
-			get_template_part( '/views/notices/missing-autoloader' );
+			get_template_part( 'views/notices/missing-autoloader' );
 		} );
 	}
 }
