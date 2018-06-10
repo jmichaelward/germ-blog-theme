@@ -11,14 +11,13 @@ namespace JMW\GermBlog\Admin;
  *
  * @package JMW\GermBlog\Admin
  */
-class Notifier
-{
-    /**
-     * Notify the administrator that the theme autoloader cannot be found.
-     */
-    public function notify_missing_autoloader() {
-        add_action( 'admin_notices', function() {
-            include get_template_directory() . '/views/notices/missing-autoloader.php';
-        });
-    }
+class Notifier {
+	/**
+	 * Notify the administrator that the theme autoloader cannot be found.
+	 */
+	public function notify_missing_autoloader() {
+		add_action( 'admin_notices', function () {
+			get_template_part( '/views/notices/missing-autoloader' );
+		} );
+	}
 }
