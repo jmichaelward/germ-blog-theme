@@ -12,11 +12,12 @@ module.exports = {
 	},
 	module: {
 		rules: [{
-			test: /\.(s*)css$/,
+			test: /\.scss$/,
 			use: [
 				ExtractTextPlugin.loader,
-				'css-loader'
-			]
+				'css-loader',
+				'sass-loader'
+			],
 		}]
 	},
 	plugins: [
@@ -24,7 +25,12 @@ module.exports = {
 		new BrowserSyncPlugin({
 			proxy: {
 				target: 'http://germ.blog.localhost'
-			}
+			},
+			files: [
+				'*/**/*.php',
+				'assets/src/js/**/*.js',
+				'assets/src/scss/**/*.scss'
+			]
 		})
 	]
 };
