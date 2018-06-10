@@ -27,7 +27,7 @@ module.exports = {
 				target: 'http://germ.blog.localhost'
 			},
 			files: [
-				'*/**/*.php',
+				'./**/*.php',
 				'assets/src/js/**/*.js',
 				'assets/src/scss/**/*.scss'
 			]

@@ -1,0 +1,12 @@
+html,
+body {
+  font-size: 100%;
+}
+
+p {
+  line-height: 1.6;
+
+  & + p {
+    margin-top: 1.5rem;
+  }
+}
