@@ -1,0 +1,29 @@
+.site-header {
+  background: #eeeeee;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.site-header__info {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.site-nav {
+  margin: 1rem auto 0 auto;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.site-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.site-description {
+  font-size: 2rem;
+  font-style: italic;
+}

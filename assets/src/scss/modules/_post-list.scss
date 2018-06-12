@@ -1,3 +1,19 @@
 .post-list__item + .post-list__item {
   margin-top: 3rem;
 }
+
+.post__title {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.375rem;
+  margin-bottom: 1.125rem;
+  text-transform: uppercase;
+
+  a {
+    border-bottom: 2px solid black;
+    color: inherit;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    text-decoration: none;
+  }
+}
