@@ -21,12 +21,7 @@ class Theme {
 	/**
 	 * @var string
 	 */
-	private $css_url;
-
-	/**
-	 * @var
-	 */
-	private $js_url;
+	private $asset_url;
 
 	/**
 	 * Theme version.
@@ -39,8 +34,7 @@ class Theme {
 	 *
 	 */
 	public function run() {
-		$this->css_url = get_template_directory_uri() . '/assets/dist/css';
-		$this->js_url  = get_template_directory_uri() . '/assets/dist/js';
+		$this->asset_url = get_template_directory_uri() . '/assets/dist/';
 
 		$this->register_hooks();
 	}
@@ -57,13 +51,13 @@ class Theme {
 	 *
 	 */
 	public function register_scripts() {
-		wp_enqueue_script( "{$this->prefix}-main", "{$this->js_url}/app.js", [], $this->version, true );
+		wp_enqueue_script( "{$this->prefix}-main", "{$this->asset_url}/app.js", [], $this->version, true );
 	}
 
 	/**
 	 *
 	 */
 	public function register_styles() {
-		wp_enqueue_style( "{$this->prefix}-main", "{$this->css_url}/app.css" );
+		wp_enqueue_style( "{$this->prefix}-main", "{$this->asset_url}/app.css" );
 	}
 }

@@ -1,36 +1,16 @@
-const path = require('path');
-const ExtractTextPlugin = require('mini-css-extract-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var Encore = require('@symfony/webpack-encore');
 
-module.exports = {
-	entry: {
-		app: './assets/src/js/app.js'
-	},
-	output: {
-		filename: 'app.js',
-		path: path.resolve(__dirname, 'assets/dist/js/')
-	},
-	module: {
-		rules: [{
-			test: /\.scss$/,
-			use: [
-				ExtractTextPlugin.loader,
-				'css-loader',
-				'sass-loader'
-			],
-		}]
-	},
-	plugins: [
-		new ExtractTextPlugin({filename: '../css/app.css'}),
-		new BrowserSyncPlugin({
-			proxy: {
-				target: 'http://germ.blog.localhost'
-			},
-			files: [
-				'./**/*.php',
-				'assets/src/js/**/*.js',
-				'assets/src/scss/**/*.scss'
-			]
-		})
-	]
-};
+Encore
+.setOutputPath('./assets/dist')
+.setPublicPath('/wp-content/themes/germ-blog-theme/assets/dist')
+.addEntry('app', './assets/src/js/app.js')
+.autoProvidejQuery()
+// .enableVersioning(Encore.isProduction())
+    .enableSourceMaps(!Encore.isProduction())
+    .cleanupOutputBeforeBuild()
+.enableBuildNotifications()
+.enableSassLoader()
+.configureUrlLoader()
+;
+
+module.exports = Encore.getWebpackConfig();
