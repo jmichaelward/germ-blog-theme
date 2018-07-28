@@ -1,0 +1,47 @@
+.user-content {
+  max-width: $max-width--body;
+
+  h1 {
+   @extend %h1;
+  }
+
+  h2 {
+    @extend %heading-base;
+    font-size: 2.369rem;
+  }
+
+  h3 {
+    @extend %heading-base;
+    font-size: 1.777rem;
+  }
+
+  h4 {
+    @extend %heading-base;
+    font-weight: 700;
+  }
+
+  h5 {
+    @extend %heading-base;
+    font-style: italic;
+  }
+
+  h4, h5 {
+    font-size: 1.333rem;
+    text-transform: uppercase;
+  }
+
+  h6 {
+    @extend %heading-base;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+
+    & + * {
+      margin-top: 1.625rem;
+    }
+  }
+}

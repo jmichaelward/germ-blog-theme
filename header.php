@@ -13,14 +13,23 @@
 </head>
 <body <?php body_class(); ?>>
 <header class="site-header">
-	<div class="site-header__info">
-		<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-	</div>
+	<div class="site-header__inner">
+		<div class="site-header__info">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 
-	<nav class="site-nav">
-		<?php wp_nav_menu(); ?>
-	</nav>
+			<?php if ( get_bloginfo( 'description' ) ) : ?>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<?php endif; ?>
+		</div>
+
+		<?php
+		/*
+		<nav class="site-nav">
+			<?php wp_nav_menu(); ?>
+		</nav>
+ */
+		?>
+	</div>
 </header>
 
 <div class="wrapper">

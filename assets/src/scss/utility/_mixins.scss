@@ -1,0 +1,15 @@
+%heading-base {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 1.414em 0 0.5rem;
+  line-height: 1.2;
+}
+
+%h1 {
+  @extend %heading-base;
+  margin-top: 0;
+  font-size: 3.157rem;
+}
+
+%h2 {
+  font-size: 2.369rem;
+}
